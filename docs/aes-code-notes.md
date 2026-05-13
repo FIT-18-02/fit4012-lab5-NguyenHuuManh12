@@ -25,17 +25,17 @@ Các hàm chính:
 
 Vai trò chính:
 
-- đọc ciphertext từ `message.aes`
+- đọc ciphertext `message.aes`
 - đọc khóa từ `keyfile`
 - gọi `KeyExpansion`
-- giải mã từng block 16 byte
-- in plaintext khôi phục
+- giải từng block 16 byte
+- in plaintext 
 
 Các hàm chính:
 
 - `SubRoundKey`
 - `InverseMixColumns`
-- `ShiftRows` theo chiều ngược
+- `ShiftRows`  chiều ngược
 - `SubBytes` dùng inverse S-box
 - `InitialRound`
 - `AESDecrypt`
@@ -55,6 +55,6 @@ Vai trò chính:
 - Tách phần AES core ra `aes.h` và `aes.cpp`.
 - Tách CLI ra `main.cpp`.
 - Không dùng `strlen` với dữ liệu ciphertext binary.
-- Không ghi ciphertext bằng toán tử `<<` với con trỏ `unsigned char*`.
+- Không ghi ciphertext bằng toán tử  với con trỏ `unsigned char*`.
 - Dùng `std::vector<unsigned char>` và `ofstream::write` / `ifstream::read`.
 - Dùng PKCS#7 padding thay cho zero padding.
